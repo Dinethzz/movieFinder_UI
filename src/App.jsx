@@ -1,17 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { Home } from 'lucide-react'
 import HomePage from './pages/home_page'
+import { Routes, Route } from 'react-router-dom'
+import FavoritesPage from './pages/favorites_page'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <HomePage />
-    </>
+    <div>
+      <h1>Movie Finder App</h1>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
 
